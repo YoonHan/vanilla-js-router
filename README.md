@@ -6,6 +6,7 @@
 
 - ES6+
 - Jest
+- Webpack
 
 ## 참고 사이트 
 
