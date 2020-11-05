@@ -4,7 +4,7 @@
 
 ## 개발 도구
 
-- ES6+
+- ES6
 - Jest
 - Webpack
 
