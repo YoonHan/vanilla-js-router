@@ -1,0 +1,14 @@
+.navigation-bar {
+    display: flex;
+    position: fixed;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.navigation-bar li {
+    padding: 0 10px;
+}
