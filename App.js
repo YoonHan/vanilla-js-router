@@ -1,9 +1,7 @@
 import styles from './App.module.css';
 
 class App {
-    constructor() {
-
-    }
+    constructor() {}
 
     render() {
         return `
@@ -24,7 +22,6 @@ class App {
             </ul>
             <!-- route outlet -->
             <div id="route-view">
-
             </div>
         `
     }
