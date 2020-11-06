@@ -40,14 +40,8 @@ class HashRouter {
     }
 
     _changeComponent() {
-        let nextComponent;
-        const currentRoute = this.currentRoute;
-        for (let i = 0; i < this.routes.length; i++) {
-            if (this.routes[i].path === currentRoute) {
-                nextComponent = this.routes[i].component;
-            }
-        }
-        this._changeView(nextComponent);
+        const nextRoute = this.routes.find((route) => this.currentRoute === route.path);
+        this._changeView(nextRoute.component);
     }
 }
 
