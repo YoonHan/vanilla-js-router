@@ -1,15 +1,15 @@
 class HashRouter {
     constructor(options) {
         this.routes = [];
-        this.root = '/';
+        this.root = '';
         this.view = '';
-        if (options && options.root) this.root = options.root;
-        if (options && options.view) {
-            this.view = options.view
+        if (options && options.root && options.view) {
+            this.root = options.root;
+            this.view = options.view;
         } else {
-            throw Error('invalid view option');
-        };
-        window.addEventListener('popstate', () => { this._changeComponent() }, false);
+            throw Error('root, view is need for instantiating')
+        }
+        window.onpopstate = () => { this._changeComponent() }
     }
 
     add(path, component) {
@@ -17,20 +17,6 @@ class HashRouter {
             throw Error('path must be string and could not be empty');
         }
         this.routes.push({ path: this._clearEndSlashes(window.location.pathname) + path, component });
-        return this;
-    }
-
-    remove(path) {
-        for (let i = 0; i < this.routes.length; i++) {
-            if (this.routes[i].path === path) {
-                this.routes.slice(i, 1);
-                return this;
-            }
-        }
-    }
-
-    removeAll() {
-        this.routes = [];
         return this;
     }
 
